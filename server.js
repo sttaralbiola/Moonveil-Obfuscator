@@ -50,7 +50,6 @@ app.use("/api/obfuscate", clientTypeMiddleware, (req, res, next) => {
 
 const VALID_PRESETS = ["Minify", "Weak", "Medium", "Strong"];
 
-// HARDCODED reCAPTCHA KEYS
 const RECAPTCHA_SITE_KEY = "6LeqT0otAAAAAM8pq0CLcN9367Ya-jVAn0wVQg0n";
 const RECAPTCHA_SECRET_KEY = "6LeqT0otAAAAACWkh7XC8UsQbNxVtSFo8YHKRJcV";
 
@@ -494,7 +493,7 @@ const HTML_PAGE = `<!DOCTYPE html>
     <div class="modal-box">
       <h2>🔐 Human Verification</h2>
       <p>Please complete the reCAPTCHA to prove you're human.</p>
-      <div class="g-recaptcha" data-sitekey="${RECAPTCHA_SITE_KEY}"></div>
+      <div class="g-recaptcha" data-sitekey="${RECAPTCHA_SITE_KEY}" data-callback="onRecaptchaSuccess" data-expired-callback="onRecaptchaExpired"></div>
       <button class="btn btn-primary" id="modalVerifyBtn" disabled>Verify & Obfuscate</button>
       <div style="margin-top:10px; font-size:12px; color:var(--muted);">
         <span id="modalStatus"></span>
