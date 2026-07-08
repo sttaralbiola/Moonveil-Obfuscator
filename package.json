@@ -1,0 +1,16 @@
+{
+  "name": "moonveil-obfuscator",
+  "version": "1.0.0",
+  "description": "Moonveil Obfuscator - a dashboard front-end for the Prometheus Lua obfuscator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
